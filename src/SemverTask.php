@@ -1,6 +1,6 @@
 <?php
 
-namespace Phing\Tasks\Ext;
+namespace Phing\Task\Ext;
 
 use Phing\Task;
 use Phing\Exception\BuildException;
