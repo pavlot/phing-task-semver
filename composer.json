@@ -32,5 +32,8 @@
         "phing-custom-taskdefs": {
             "TwigTask": "Phing\\Tasks\\Ext\\SemverTask"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --bootstrap=test/bootstrap.php test"
     }
 }
