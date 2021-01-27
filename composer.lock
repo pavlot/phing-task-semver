@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94a6fd8f3e9728b915fd3f62226f04f7",
+    "content-hash": "943b6dbd0897ac6f4ff0d14cdcf7922f",
     "packages": [
         {
             "name": "mehr-als-nix/parallel",
@@ -51,16 +51,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phingofficial/phing.git",
-                "reference": "d62b89ad1cfbfe8c81e13d50b4e521b8112feb0a"
+                "reference": "2aee06676975c4be68cd72eb0dd18a57a5d109ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phingofficial/phing/zipball/d62b89ad1cfbfe8c81e13d50b4e521b8112feb0a",
-                "reference": "d62b89ad1cfbfe8c81e13d50b4e521b8112feb0a",
+                "url": "https://api.github.com/repos/phingofficial/phing/zipball/2aee06676975c4be68cd72eb0dd18a57a5d109ab",
+                "reference": "2aee06676975c4be68cd72eb0dd18a57a5d109ab",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
+                "ext-json": "*",
                 "ext-xml": "*",
                 "mehr-als-nix/parallel": "^v1.0",
                 "phing/phing-composer-configurator": "dev-master",
@@ -69,6 +70,7 @@
                 "phing/task-ftpdeploy": "dev-master",
                 "phing/task-git": "dev-main",
                 "phing/task-hg": "dev-main",
+                "phing/task-inifile": "dev-main",
                 "phing/task-ioncube": "dev-master",
                 "phing/task-jshint": "dev-master",
                 "phing/task-jsmin": "dev-master",
@@ -77,6 +79,7 @@
                 "phing/task-phpdoc": "dev-master",
                 "phing/task-smarty": "dev-master",
                 "phing/task-ssh": "dev-master",
+                "phing/task-visualizer": "dev-main",
                 "phing/task-zendcodeanalyser": "dev-master",
                 "phing/task-zendserverdevelopmenttools": "dev-master",
                 "php": "^7.3 || ^7.4 || ^8.0",
@@ -208,7 +211,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-01-26T10:34:42+00:00"
+            "time": "2021-01-27T10:18:20+00:00"
         },
         {
             "name": "phing/phing-composer-configurator",
@@ -565,6 +568,55 @@
                 "source": "https://github.com/phingofficial/task-hg/tree/main"
             },
             "time": "2021-01-25T14:56:24+00:00"
+        },
+        {
+            "name": "phing/task-inifile",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phingofficial/task-inifile.git",
+                "reference": "54b9e2c75b1c2fdef85ede464fc6cde4b071e136"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phingofficial/task-inifile/zipball/54b9e2c75b1c2fdef85ede464fc6cde4b071e136",
+                "reference": "54b9e2c75b1c2fdef85ede464fc6cde4b071e136",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 7.1"
+            },
+            "require-dev": {
+                "phing/phing": "3.0.x-dev"
+            },
+            "default-branch": true,
+            "type": "phing-extension",
+            "extra": {
+                "phing-custom-taskdefs": {
+                    "inifile": "Phing\\Task\\Ext\\IniFileTask"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phing\\Task\\Ext\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Siad Ardroumli",
+                    "email": "siad.ardroumli@gmail.com"
+                }
+            ],
+            "description": "Tasks related to ini files.",
+            "support": {
+                "issues": "https://github.com/phingofficial/task-inifile/issues",
+                "source": "https://github.com/phingofficial/task-inifile/tree/main"
+            },
+            "time": "2021-01-26T22:04:11+00:00"
         },
         {
             "name": "phing/task-ioncube",
@@ -974,6 +1026,58 @@
             "time": "2021-01-25T14:58:07+00:00"
         },
         {
+            "name": "phing/task-visualizer",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phingofficial/task-visualizer.git",
+                "reference": "64e9ff2f9eaaf625db6d715064860d2cbf1cebd7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phingofficial/task-visualizer/zipball/64e9ff2f9eaaf625db6d715064860d2cbf1cebd7",
+                "reference": "64e9ff2f9eaaf625db6d715064860d2cbf1cebd7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 7.1"
+            },
+            "require-dev": {
+                "guzzle/http": "^v3.9",
+                "jawira/plantuml-encoding": "^v1.0",
+                "phing/phing": "3.0.x-dev",
+                "psr/http-message": "^1.0"
+            },
+            "default-branch": true,
+            "type": "phing-extension",
+            "extra": {
+                "phing-custom-taskdefs": {
+                    "visualizer": "Phing\\Task\\Ext\\VisualizerTask"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Phing\\Task\\Ext\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Siad Ardroumli",
+                    "email": "siad.ardroumli@gmail.com"
+                }
+            ],
+            "description": "VisualizerTask creates diagrams using buildfiles, these diagrams represents calls and depends among targets.",
+            "support": {
+                "issues": "https://github.com/phingofficial/task-visualizer/issues",
+                "source": "https://github.com/phingofficial/task-visualizer/tree/main"
+            },
+            "time": "2021-01-26T22:59:02+00:00"
+        },
+        {
             "name": "phing/task-zendcodeanalyser",
             "version": "dev-master",
             "source": {
@@ -1189,60 +1293,6 @@
             "time": "2020-10-13T07:07:53+00:00"
         },
         {
-            "name": "rollerworks/version",
-            "version": "v0.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rollerworks/version.git",
-                "reference": "94b4d192427cb87fed1a3b23e6b4d445ae9fb9fa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rollerworks/version/zipball/94b4d192427cb87fed1a3b23e6b4d445ae9fb9fa",
-                "reference": "94b4d192427cb87fed1a3b23e6b4d445ae9fb9fa",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1|^8.0"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^0.12.33",
-                "phpstan/phpstan-phpunit": "^0.12.13",
-                "phpunit/phpunit": "^7.3.2|^8.5.12",
-                "symfony/phpunit-bridge": "^5.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Rollerworks\\Component\\Version\\": "src/"
-                },
-                "exclude-from-classmap": [
-                    "tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastiaan Stok",
-                    "email": "s.stok@rollerscapes.net"
-                }
-            ],
-            "description": "Semantic versioning helper library",
-            "support": {
-                "issues": "https://github.com/rollerworks/version/issues",
-                "source": "https://github.com/rollerworks/version/tree/v0.3.1"
-            },
-            "time": "2020-12-15T15:04:13+00:00"
-        },
-        {
             "name": "sebastian/version",
             "version": "dev-master",
             "source": {
@@ -1302,12 +1352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "5d9e349571fa1fed2ed89fe1f5ffd58331468e87"
+                "reference": "a056a527ed72d089185d505882b66f3676e22439"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/5d9e349571fa1fed2ed89fe1f5ffd58331468e87",
-                "reference": "5d9e349571fa1fed2ed89fe1f5ffd58331468e87",
+                "url": "https://api.github.com/repos/symfony/console/zipball/a056a527ed72d089185d505882b66f3676e22439",
+                "reference": "a056a527ed72d089185d505882b66f3676e22439",
                 "shasum": ""
             },
             "require": {
@@ -1392,7 +1442,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-23T09:52:46+00:00"
+            "time": "2021-01-27T09:05:46+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -3050,12 +3100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9459507217ecef80fe6eae913f9312689ab49e10"
+                "reference": "e64d044affcb029dc0f426b5b183d62ed8e3b91e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9459507217ecef80fe6eae913f9312689ab49e10",
-                "reference": "9459507217ecef80fe6eae913f9312689ab49e10",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e64d044affcb029dc0f426b5b183d62ed8e3b91e",
+                "reference": "e64d044affcb029dc0f426b5b183d62ed8e3b91e",
                 "shasum": ""
             },
             "require": {
@@ -3145,7 +3195,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-01-24T06:30:27+00:00"
+            "time": "2021-01-27T07:36:52+00:00"
         },
         {
             "name": "sebastian/cli-parser",
