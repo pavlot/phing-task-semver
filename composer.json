@@ -19,7 +19,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Phing\\Tasks\\Ext\\": "src/"
+            "Phing\\Task\\Ext\\": "src/"
         }
     },
     "autoload-dev": {
@@ -30,7 +30,7 @@
     "minimum-stability": "dev",
     "extra": {
         "phing-custom-taskdefs": {
-            "SemverTask": "Phing\\Tasks\\Ext\\SemverTask"
+            "SemverTask": "Phing\\Task\\Ext\\SemverTask"
         }
     },
     "scripts": {
