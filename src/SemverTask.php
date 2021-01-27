@@ -5,13 +5,14 @@ namespace Phing\Tasks\Ext;
 use Phing\Task;
 use Phing\Exception\BuildException;
 
-use Rollerworks\Component\Version\Version;
+use PHLAK\SemVer;
 
 class SemverTask extends Task
 {
 
     private $action = null;
     private $version = null;
+    private $version_value = null;
     private $property = "semversion";
 
     public function setAction($str)
@@ -20,7 +21,12 @@ class SemverTask extends Task
     }
     public function setVersion($str)
     {
-        $this->version = $str;
+        $this->version = new SemVer\Version($str);
+    }
+
+    public function setVersionValue($str)
+    {
+        $this->version_value = $str;
     }
 
     public function setProperty($str)
@@ -41,42 +47,41 @@ class SemverTask extends Task
      */
     public function main()
     {
-        $version = Version::fromString($this->version);
-        $result = $this->executeAction($this->action, $version);
-        $this->getProject()->setNewProperty($this->property, $result->full);
+        $result = $this->executeAction($this->action, $this->version_value);
+        $this->getProject()->setNewProperty($this->property, (string)$this->version);
     }
 
-
-    private function executeAction($action, $version)
+    private function executeAction($action, $value)
     {
         $result = null;
         switch ($action) {
             case 'increase_major':
-                $result = $version->getNextIncreaseOf('major');
+                $result = $this->version->incrementMajor();
                 break;
             case 'increase_minor':
-                $result = $version->getNextIncreaseOf('minor');
-                break;
-            case 'increase_next':
-                $result = $version->getNextIncreaseOf('next');
+                $result = $this->version->incrementMinor();
                 break;
             case 'increase_patch':
-                $result = $version->getNextIncreaseOf('patch');
+                $result = $this->version->incrementPatch();
                 break;
-            case 'increase_stable':
-                $result = $version->getNextIncreaseOf('stable');
+            case 'set_major':
+                $result = $this->version->setMajor($value);
                 break;
-            case 'increase_alpha':
-                $result = $version->getNextIncreaseOf('alpha');
+            case 'set_minor':
+                $result = $this->version->setMinor($value);
                 break;
-            case 'increase_beta':
-                $result = $version->getNextIncreaseOf('beta');
+            case 'set_patch':
+                $result = $this->version->setPatch($value);
                 break;
-            case 'increase_rc':
-                $result = $version->getNextIncreaseOf('rc');
+            case 'set_pre-release':
+                $result = $this->version->setPreRelease($value);
                 break;
+            case 'set_build':
+                $result = $this->version->setBuild($value);
+                break;
+
             default:
-                throw new BuildException("Unknow action given:".$action);
+                throw new BuildException("Unknow action given:" . $action);
                 break;
         }
         return $result;

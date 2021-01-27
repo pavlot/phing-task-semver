@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4606e8b4a97d1d6d084fe160f7dbd5b5",
+    "content-hash": "94a6fd8f3e9728b915fd3f62226f04f7",
     "packages": [
         {
             "name": "mehr-als-nix/parallel",
@@ -1072,6 +1072,67 @@
                 "source": "https://github.com/phingofficial/task-zendserverdeploymenttool/tree/master"
             },
             "time": "2021-01-25T14:58:31+00:00"
+        },
+        {
+            "name": "phlak/semver",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHLAK/SemVer.git",
+                "reference": "f9e48032087385d525772a608712369be9e92694"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHLAK/SemVer/zipball/f9e48032087385d525772a608712369be9e92694",
+                "reference": "f9e48032087385d525772a608712369be9e92694",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phlak/coding-standards": "^1.1",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "psy/psysh": "^0.10",
+                "vimeo/psalm": "^4.3"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHLAK\\SemVer\\": "src/"
+                },
+                "files": [
+                    "src/Support/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Kankiewicz",
+                    "email": "Chris@ChrisKankiewicz.com"
+                }
+            ],
+            "description": "Semantic versioning helper library",
+            "support": {
+                "issues": "https://github.com/PHLAK/SemVer/issues",
+                "source": "https://github.com/PHLAK/SemVer/tree/master"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/PHLAK",
+                    "type": "github"
+                },
+                {
+                    "url": "https://paypal.me/ChrisKankiewicz",
+                    "type": "paypal"
+                }
+            ],
+            "time": "2021-01-07T16:06:57+00:00"
         },
         {
             "name": "psr/container",
@@ -4124,7 +4185,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "phing/phing": 20
+        "phing/phing": 20,
+        "phlak/semver": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

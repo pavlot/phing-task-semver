@@ -4,7 +4,7 @@
     "type": "project",
     "require": {
         "phing/phing": "dev-master",
-        "rollerworks/version": "^0.3.1"
+        "phlak/semver": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.4"
