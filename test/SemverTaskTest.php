@@ -39,6 +39,18 @@ class SemverTaskTest extends BuildFileTest
         $this->assertEquals($semver_version, $expected);
     }
 
+    /**
+     * @dataProvider versionIncreaseDataProvider
+     */
+    public function testVersionIncreaseFromPropertyStoreToDeafult(string $action, string $expected): void
+    {
+        $this->getProject()->setProperty('increase_action', $action);
+        $this->executeTarget("increase_semver_default_property");
+        $semver_version =$this->getProject()->getProperty('semversion');
+
+        $this->assertEquals($semver_version, $expected);
+    }
+
     public function versionIncreaseDataProvider(): array
     {
         return [
@@ -49,7 +61,15 @@ class SemverTaskTest extends BuildFileTest
             ["increase_stable", "1.1.0"],
             ["increase_alpha", "1.1.0-ALPHA1"],
             ["increase_beta", "1.1.0-BETA1"],
-            ["increase_rc", "1.1.0-RC1"]
+            ["increase_rc", "1.1.0-RC1"],
+            ["increase_major", "v2.0.0"],
+            ["increase_minor", "v1.1.0"],
+            ["increase_patch", "v1.0.1"],
+            ["increase_next", "v1.1.0"],
+            ["increase_stable", "v1.1.0"],
+            ["increase_alpha", "v1.1.0-ALPHA1"],
+            ["increase_beta", "v1.1.0-BETA1"],
+            ["increase_rc", "v1.1.0-RC1"]
         ];
     }
 }

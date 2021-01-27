@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
 <project name="SemverTask-test" default="none">
     <target name="increase_semver">
-        <SemverTask action="${increase_action}" input="1.0.0" output="semver.version"/>
+        <SemverTask action="${increase_action}" version="1.0.0" property="semver.version"/>
+    </target>
+    <target name="increase_semver_default_property">
+        <SemverTask action="${increase_action}" version="1.0.0"/>
     </target>
     <target name="increase_semver_from_property">
         <property name="version" value="1.0.0"/>
-        <SemverTask action="${increase_action}" input="${version}" output="semver.version"/>
+        <SemverTask action="${increase_action}" version="${version}" property="semver.version"/>
         <echo msg="Semver version: ${semver.version}"/>
     </target>
 

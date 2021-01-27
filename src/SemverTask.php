@@ -11,21 +11,21 @@ class SemverTask extends Task
 {
 
     private $action = null;
-    private $input = null;
-    private $output = null;
+    private $version = null;
+    private $property = "semversion";
 
     public function setAction($str)
     {
         $this->action = $str;
     }
-    public function setInput($str)
+    public function setVersion($str)
     {
-        $this->input = $str;
+        $this->version = $str;
     }
 
-    public function setOutput($str)
+    public function setProperty($str)
     {
-        $this->output = $str;
+        $this->property = $str;
     }
 
     /**
@@ -41,9 +41,9 @@ class SemverTask extends Task
      */
     public function main()
     {
-        $version = Version::fromString($this->input);
+        $version = Version::fromString($this->version);
         $result = $this->executeAction($this->action, $version);
-        $this->getProject()->setNewProperty($this->output, $result->full);
+        $this->getProject()->setNewProperty($this->property, $result->full);
     }
 
 
