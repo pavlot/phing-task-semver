@@ -30,7 +30,7 @@
     "minimum-stability": "dev",
     "extra": {
         "phing-custom-taskdefs": {
-            "TwigTask": "Phing\\Tasks\\Ext\\SemverTask"
+            "SemverTask": "Phing\\Tasks\\Ext\\SemverTask"
         }
     },
     "scripts": {
