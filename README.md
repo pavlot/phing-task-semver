@@ -1,4 +1,4 @@
-# Semver task ![Tests](https://github.com/pavlot/phing-task-semver/workflows/PHP%20Composer/badge.svg)
+# Semver task ![Github Test](https://github.com/pavlot/phing-task-semver/workflows/Github%20Test/badge.svg)
 [Phing](https://www.phing.info/) task to manipulate versions in Semver format
 
 # Parameters
