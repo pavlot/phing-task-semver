@@ -1,7 +1,7 @@
 {
     "name": "pavlot/phing-task-semver",
     "description": "This project contains Semantic Versioning task for Phing.",
-    "type": "project",
+    "type": "phing-extension",
     "require": {
         "phing/phing": "^3.0.x-dev",
         "phlak/semver": "dev-master"
