@@ -3,6 +3,11 @@
 
 # Parameters
 
+- **action** - one of: `increase_major`,`increase_minor`,`increase_patch`, `set_major`,`set_minor`,`set_patch`,`set_pre-release`,`set_build`
+- **version** - version string to be modified
+- **versionValue** - Value to be applied. Make sense only for `set*` actions.
+- **property** - Property where new version will be stored. If ommited, this task will store new version to `${semversion}`
+
 # Usage examples
 
 Simplest usecase: you just provide what type of `action` you'd like to perform, `version` string and `property` where new value will be stored
